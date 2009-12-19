@@ -1,20 +1,24 @@
-if (document.getElementById('hello')) { 
-var stringly = '23²*23'; 
-var newStringly = $.replaceByCharCode(stringly); 
-  document.getElementById('hello').innerHTML = stringly.charCodeAt(0); 
-  document.getElementById('hello').innerHTML += newStringly; 
-} 
- 
- 
-(function($){ 
-jQuery.replaceByCharCode = function(theString){  
-    var splitString = theString.split(''); 
-    for(var i=0, ii=splitString.length;i<ii;i++){ 
-      var charcode = splitString[i].charCodeAt(0); 
-      if(charcode == 178){ 
-        splitString[i] = "@2"; 
-      } 
-    } 
-    return splitString.join(''); 
-  }; 
+;(function($){
+  jQuery.replaceByCharCode=function(n){
+    var split_n = n.split('');
+    for(var i=0, ii=split_n.length;i<ii;i++){
+      var charCode = split_n[i].charCodeAt(0);
+      if(jQuery.replaceByCharCode.replaceBy[charCode]){
+        split_n[i] = jQuery.replaceByCharCode.replaceBy[charCode];
+      }
+    }
+  
+    return split_n.join('');
+  };
+  
+  jQuery.replaceByCharCode.replaceBy = {
+    178: "@2",
+    106: "--",
+    107: "--"
+  };
 })(jQuery);
+
+var str = "khkjjh";
+var nn = $.replaceByCharCode(str);
+
+console.log(nn);
