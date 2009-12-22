@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <link rel="stylesheet" href="http://github.com/jquery/qunit/raw/master/qunit/qunit.css" type="text/css" media="screen" />
+<script type="text/javascript" src="http://github.com/jquery/qunit/raw/master/qunit/qunit.js"></script>
+<script src="jquery.replaceByCharCode.js"></script>
+  <script>
+  $(document).ready(function(){
+		var str = "abcdefghijklmnopqrstuvwxyz";
+		jQuery.replaceByCharCode.replaceBy = {
+		    0: "0",
+		    1: "1",
+		    2: "2",
+		    3: "3",
+		    4: "4",
+		    5: "5",
+		    6: "6",
+		    7: "7",
+		    8: "8",
+		    9: "9",
+		    97: "97",//a
+		    98: "98",//b
+		    99: "99",//c
+		    100: "100",//d
+		    101: "101",//e
+		    102: "102",//f
+		    103: "103",//g
+		    104: "104",//h
+		    105: "105"//i
+		}
+		var nn = $.replaceByCharCode(str);
+
+		test("same test", function() {
+			same(nn, str, "should fail");
+		});
+
+  });
+  </script>
+
+</head>
+<body>
+  <h1 id="qunit-header">QUnit example</h1>
+ <h2 id="qunit-banner"></h2>
+ <h2 id="qunit-userAgent"></h2>
+ <ol id="qunit-tests"></ol>
+</body>
+</html>

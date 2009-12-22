@@ -17,8 +17,3 @@
     107: "--"
   };
 })(jQuery);
-
-var str = "khkjjh";
-var nn = $.replaceByCharCode(str);
-
-console.log(nn);
