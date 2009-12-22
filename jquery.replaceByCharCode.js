@@ -12,8 +12,7 @@
   };
   
   jQuery.replaceByCharCode.replaceBy = {
-    178: "@2",
-    106: "--",
-    107: "--"
+    178: "@2"//replace superscript 2s with @2
+    960: "@pi"//replace pi symbol with @pi
   };
 })(jQuery);
